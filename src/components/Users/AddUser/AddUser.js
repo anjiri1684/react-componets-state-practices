@@ -3,7 +3,7 @@ import Button from "../../UI/Button/Button";
 import Card from "../../UI/Card";
 import classes from "./AddUser.module.css";
 
-function AddUser() {
+function AddUser(props) {
   const [enteredUserName, setEnteredUserName] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -18,7 +18,7 @@ function AddUser() {
       return;
     }
 
-    console.log(enteredUserName, enteredAge);
+    props.onAddUser(enteredAge, enteredUserName);
     setEnteredUserName("");
     setEnteredAge("");
   }
